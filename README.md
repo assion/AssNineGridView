@@ -8,16 +8,14 @@
 * [AssNineGridView：仿QQ空间，微信朋友圈展示图片的九宫格图片展示控件](https://blog.csdn.net/weixin_40509481/article/details/82774002) 
 ## 演示
 ### 九宫格只显示1张图
-
+![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo01.jpg)
 
 ### 九宫格只显示2张图
-
+![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo03.jpg)
 ### 九宫格只显示4张图
-
-
+![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo02.jpg)
 ### 九宫格显示9张以上
-
-![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xhdpi/demo7.jpg)
+![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo04.jpg)
 ### 普通
-
+![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo07.jpg)  ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo05.jpg)  ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo06.jpg)
 
