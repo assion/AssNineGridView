@@ -6,7 +6,7 @@
 也希望大家下载体验本项目，个人能力也有限，希望一起学习一起进步。
 更多详情，可以参考我的CSDN博客地址：
 * [AssNineGridView：仿QQ空间，微信朋友圈展示图片的九宫格图片展示控件](https://blog.csdn.net/weixin_40509481/article/details/82774002) 
-## 演示
+## 效果图
 ### 九宫格只显示1张图
 ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo01.jpg)
 ### 九宫格只显示2张图
@@ -17,9 +17,6 @@
 ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo04.jpg)
 ### 普通
 ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo07.jpg)  ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo05.jpg)  ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo06.jpg)
-## 使用方法
-* 方法一
-* 方法二
 ## 项目功能
 * 当获取的图片数量超过最大显示的图片数量时，最后一张图片上会显示剩余数量（类似于QQ的动态效果）
 * 使用Adapter模式设置图片
@@ -35,4 +32,9 @@
 |angv_singleImgRatio|只显示一张图片时图片宽高比|
 |angv_gridSpace|网格显示图片时，图片之间的间距，默认3dp|
 |angv_maxSize|最多显示图片的数量，默认最大9张|
+## 使用方法
+### 1 导入
+* 方法一
+* 方法二
+### 2 初始化
 
