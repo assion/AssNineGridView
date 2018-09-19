@@ -9,7 +9,6 @@
 ## 演示
 ### 九宫格只显示1张图
 ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo01.jpg)
-
 ### 九宫格只显示2张图
 ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo03.jpg)
 ### 九宫格只显示4张图
@@ -18,4 +17,22 @@
 ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo04.jpg)
 ### 普通
 ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo07.jpg)  ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo05.jpg)  ![](https://github.com/assion/AssNineGridView/blob/master/app/src/main/res/mipmap-xxhdpi/demo06.jpg)
+## 使用方法
+* 方法一
+* 方法二
+## 项目功能
+* 当获取的图片数量超过最大显示的图片数量时，最后一张图片上会显示剩余数量（类似于QQ的动态效果）
+* 使用Adapter模式设置图片
+* 默认增加了图片点击全屏预览效果，并附带预览动画
+* 使用接口加载图片,支持任意的图片加载框架,如 Glide,ImageLoader,Fresco,xUtils3,Picasso 等
+* 整合了PhotoView图片预览
+* 使用接口抽出图片的加载方式，可以方便的将Glide替换成自己喜欢的ImageLoader等
+* 使用代码简单，只需要几行代码
+* 其他功能增加中......
+## 自定义参数设置
+|属性名称|参数含义|
+|:---|:---|
+|angv_singleImgRatio|只显示一张图片时图片宽高比|
+|angv_gridSpace|网格显示图片时，图片之间的间距，默认3dp|
+|angv_maxSize|最多显示图片的数量，默认最大9张|
 
