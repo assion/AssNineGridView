@@ -80,7 +80,6 @@ public class DemoActivity extends AppCompatActivity {
             List<ImageInfo> imageInfos = new ArrayList<>();
             List<String> images = mDatas.get(position).getImages();
             for (String url : images){
-                Log.d("haozi:", url);
                 ImageInfo imageInfo = new ImageInfo();
                 imageInfo.setBigImageUrl(url);
                 imageInfo.setThumbnailUrl(url);
