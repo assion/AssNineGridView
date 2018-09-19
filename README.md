@@ -37,4 +37,85 @@
 * 方法一
 * 方法二
 ### 2 初始化
+* 在Application中初始化AssNineGridView的图片加载器
+```
+ AssNineGridView.setImageLoader(new GlideImageLoader());
+```
+* 自定义自己的图片加载器，支持任意的图片加载框架,如 Glide,ImageLoader,Fresco,Picasso 等
+```
+public class GlideImageLoader implements AssNineGridView.ImageLoader{
 
+    @Override
+    public void onDisplayImage(Context context, ImageView imageView, String url) {
+        Glide.with(context).load(url).into(imageView);
+    }
+
+    @Override
+    public Bitmap getCacheImage(String url) {
+        return null;
+    }
+}
+```
+* xml添加
+```
+ <com.assionhonty.lib.assninegridview.AssNineGridView
+            android:id="@+id/angv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            app:angv_gridSpace="3dp"
+            app:angv_maxSize="9"
+            app:angv_singleImgRatio="1" />
+```
+* java代码（demo中用的recyclerview加载列表）
+ImageInfo是库中提供的数据Bean，需要两个url，分别表示小图和大图的url，没有大图或者小图，则都赋给相同的Url即可，AssNineGridViewClickAdapter是库中提供的默认实现了点击预览的Adapter
+```
+List<ImageInfo> imageInfos = getImageInfos(position);
+//AssNineGridViewClickAdapter：库中自带的适配器，点击预览大图
+holder.angv.setAdapter(new AssNineGridViewClickAdapter(DemoActivity.this, imageInfos));
+
+ ```
+ ```
+ private List<ImageInfo> getImageInfos(int position) {
+            List<ImageInfo> imageInfos = new ArrayList<>();
+            List<String> images = mDatas.get(position).getImages();
+            for (String url : images){
+                ImageInfo imageInfo = new ImageInfo();
+                imageInfo.setBigImageUrl(url);
+                imageInfo.setThumbnailUrl(url);
+                imageInfos.add(imageInfo);
+            }
+            return imageInfos;
+        }
+ ```
+如果不想使用预览效果，可以自己继承 AssNineGridViewAdapter 实现其中 onImageItemClick 方法即可。
+ ```
+  List<ImageInfo> imageInfos = getImageInfos(position);
+  //自定义的适配器，继承AssNineGridViewAdapter
+  MyAssAdapter assAdapter = new MyAssAdapter(DemoActivity.this, imageInfos);
+  assAdapter.onImageItemClick(DemoActivity.this,  holder.angv, position, imageInfos);
+  holder.angv.setAdapter(assAdapter);
+```
+```
+private class MyAssAdapter extends AssNineGridViewAdapter{
+            private Context mContext;
+             MyAssAdapter(Context context, List<ImageInfo> imageInfo) {
+                super(context, imageInfo);
+                 mContext = context;
+            }
+
+            @Override
+            public void onImageItemClick(Context context, AssNineGridView angv, int index, List<ImageInfo> imageInfo) {
+                super.onImageItemClick(context, angv, index, imageInfo);
+                //执行点击事件
+                Toast.makeText(mContext, "条目"+index+":自定义点击效果", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+```
+## 关于
+若遇到使用上的问题，请先翻看Issues,或者直接发邮件给我assionhonty@126.com
+## 联系我
+gitHub [https://github.com/assion]
+CSDN博客：[https://blog.csdn.net/weixin_40509481]
+QQ 857516910
