@@ -116,6 +116,6 @@ private class MyAssAdapter extends AssNineGridViewAdapter{
 ## 关于
 若遇到使用上的问题，请先翻看Issues,或者直接发邮件给我assionhonty@126.com
 ## 联系我
-gitHub [https://github.com/assion]
-CSDN博客：[https://blog.csdn.net/weixin_40509481]
-QQ 857516910
+* gitHub [https://github.com/assion]
+* CSDN博客：[https://blog.csdn.net/weixin_40509481]
+* QQ 857516910
