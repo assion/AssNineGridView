@@ -36,6 +36,9 @@
 ### 1 导入
 * 方法一
 * 方法二
+```
+implementation project(':lib_assninegridview')
+```
 ### 2 初始化
 * 在Application中初始化AssNineGridView的图片加载器
 ```
@@ -70,13 +73,13 @@ public class GlideImageLoader implements AssNineGridView.ImageLoader{
 * java代码（demo中用的recyclerview加载列表）
 ImageInfo是库中提供的数据Bean，需要两个url，分别表示小图和大图的url，没有大图或者小图，则都赋给相同的Url即可，AssNineGridViewClickAdapter是库中提供的默认实现了点击预览的Adapter
 ```
-List<ImageInfo> imageInfos = getImageInfos(position);
-//AssNineGridViewClickAdapter：库中自带的适配器，点击预览大图
+List<ImageInfo> imageInfos = getImageInfos(position);        
 holder.angv.setAdapter(new AssNineGridViewClickAdapter(DemoActivity.this, imageInfos));
 
- ```
- ```
- private List<ImageInfo> getImageInfos(int position) {
+```
+AssNineGridViewClickAdapter：库中自带的适配器，点击预览大图 
+```
+private List<ImageInfo> getImageInfos(int position) {
             List<ImageInfo> imageInfos = new ArrayList<>();
             List<String> images = mDatas.get(position).getImages();
             for (String url : images){
@@ -87,15 +90,15 @@ holder.angv.setAdapter(new AssNineGridViewClickAdapter(DemoActivity.this, imageI
             }
             return imageInfos;
         }
- ```
+```
 如果不想使用预览效果，可以自己继承 AssNineGridViewAdapter 实现其中 onImageItemClick 方法即可。
- ```
+```
   List<ImageInfo> imageInfos = getImageInfos(position);
-  //自定义的适配器，继承AssNineGridViewAdapter
   MyAssAdapter assAdapter = new MyAssAdapter(DemoActivity.this, imageInfos);
   assAdapter.onImageItemClick(DemoActivity.this,  holder.angv, position, imageInfos);
   holder.angv.setAdapter(assAdapter);
 ```
+ MyAssAdapter是自定义的适配器，继承AssNineGridViewAdapter
 ```
 private class MyAssAdapter extends AssNineGridViewAdapter{
             private Context mContext;
