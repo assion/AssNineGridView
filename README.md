@@ -1,4 +1,4 @@
-# AssNineGridView    [![](https://jitpack.io/v/assion/AssNineGridView.svg)](https://jitpack.io/#assion/AssNineGridView)
+# AssNineGridView   [![](https://jitpack.io/v/assion/AssNineGridView.svg)](https://jitpack.io/#assion/AssNineGridView)
 仿微信朋友圈展示图片的九宫格图片展示控件，支持点击图片全屏预览大图（可自定义）。
 ## 写在前面
 这是一个九宫格控件，本来是很久之前就写好了，现在才开源出来，也是看了很多优秀的框架才整理出来的，希望能够帮助到大家。
@@ -48,8 +48,9 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 ```
 	dependencies {
-	        implementation 'com.github.assion:AssNineGridView:v1.0.1'
+	        implementation 'com.github.assion:AssNineGridView:v1.0.2'
 	}
+
 
 ```
 * 方法二
