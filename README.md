@@ -48,8 +48,9 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 ```
 	dependencies {
-	        implementation 'com.github.assion:AssNineGridView:1.0.1'
+	        implementation 'com.github.assion:AssNineGridView:v1.0.1'
 	}
+
 ```
 * 方法二
 
