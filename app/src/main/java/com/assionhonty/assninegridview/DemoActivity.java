@@ -1,5 +1,6 @@
 package com.assionhonty.assninegridview;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.assionhonty.lib.assninegridview.AssNineGridView;
+import com.assionhonty.lib.assninegridview.AssNineGridViewAdapter;
 import com.assionhonty.lib.assninegridview.AssNineGridViewClickAdapter;
 import com.assionhonty.lib.assninegridview.ImageInfo;
 
@@ -66,9 +69,13 @@ public class DemoActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-            holder.tv.setText("条目 "+position);
+            holder.tv.setText("条目 " + position);
             List<ImageInfo> imageInfos = getImageInfos(position);
             holder.angv.setAdapter(new AssNineGridViewClickAdapter(DemoActivity.this, imageInfos));
+
+//            MyAssAdapter assAdapter = new MyAssAdapter(DemoActivity.this, imageInfos);
+//            assAdapter.onImageItemClick(DemoActivity.this,  holder.angv, position, imageInfos);
+//            holder.angv.setAdapter(assAdapter);
         }
 
         @Override
@@ -79,7 +86,7 @@ public class DemoActivity extends AppCompatActivity {
         private List<ImageInfo> getImageInfos(int position) {
             List<ImageInfo> imageInfos = new ArrayList<>();
             List<String> images = mDatas.get(position).getImages();
-            for (String url : images){
+            for (String url : images) {
                 ImageInfo imageInfo = new ImageInfo();
                 imageInfo.setBigImageUrl(url);
                 imageInfo.setThumbnailUrl(url);
@@ -97,6 +104,21 @@ public class DemoActivity extends AppCompatActivity {
                 tv = itemView.findViewById(R.id.tv);
                 angv = itemView.findViewById(R.id.angv);
             }
+        }
+
+        private class MyAssAdapter extends AssNineGridViewAdapter{
+            private Context mContext;
+             MyAssAdapter(Context context, List<ImageInfo> imageInfo) {
+                super(context, imageInfo);
+                 mContext = context;
+            }
+
+            @Override
+            public void onImageItemClick(Context context, AssNineGridView angv, int index, List<ImageInfo> imageInfo) {
+                super.onImageItemClick(context, angv, index, imageInfo);
+                Toast.makeText(mContext, "条目"+index+":自定义点击效果", Toast.LENGTH_SHORT).show();
+            }
+
         }
     }
 
