@@ -35,7 +35,25 @@
 ## 使用方法
 ### 1 导入
 * 方法一
+
+Add it in your root build.gradle at the end of repositories:
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+Add the dependency
+```
+	dependencies {
+	        implementation 'com.github.assion:AssNineGridView:1.0.1'
+	}
+```
 * 方法二
+
+下载本项目，将项目中的lib直接导入即可
 ```
 implementation project(':lib_assninegridview')
 ```
@@ -59,6 +77,7 @@ public class GlideImageLoader implements AssNineGridView.ImageLoader{
     }
 }
 ```
+### 3 功能实现
 * xml添加
 ```
  <com.assionhonty.lib.assninegridview.AssNineGridView
