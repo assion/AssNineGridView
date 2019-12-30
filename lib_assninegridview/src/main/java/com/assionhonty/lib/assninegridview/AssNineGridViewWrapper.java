@@ -139,5 +139,4 @@ public class AssNineGridViewWrapper extends AppCompatImageView {
         textPaint.setColor(textColor);
         invalidate();
     }
-
 }
