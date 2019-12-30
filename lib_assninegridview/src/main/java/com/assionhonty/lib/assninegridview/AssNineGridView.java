@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -173,11 +174,20 @@ public class AssNineGridView extends ViewGroup {
             }
         }
         //修改最后一个条目，决定是否显示更多
+        Log.d("assion assionhonty","adapter.getImageInfo().size() = "+adapter.getImageInfo().size());
+        Log.d("assion assionhonty",""+maxImgSize);
+
         if (adapter.getImageInfo().size() > maxImgSize) {
             View child = getChildAt(maxImgSize - 1);
             if (child instanceof AssNineGridViewWrapper) {
                 AssNineGridViewWrapper imageView = (AssNineGridViewWrapper) child;
                 imageView.setMoreNum(adapter.getImageInfo().size() - maxImgSize);
+            }
+        }else {
+            View child = getChildAt(maxImgSize - 1);
+            if (child instanceof AssNineGridViewWrapper) {
+                AssNineGridViewWrapper imageView = (AssNineGridViewWrapper) child;
+                imageView.setMoreNum(0);
             }
         }
         mImageInfo = imageInfo;

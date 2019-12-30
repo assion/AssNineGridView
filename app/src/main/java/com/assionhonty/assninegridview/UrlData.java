@@ -1,6 +1,7 @@
 package com.assionhonty.assninegridview;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -31,24 +32,9 @@ public class UrlData {
     private static final String IMGURL15 = "http://img.hb.aicdn.com/3c5bdda5f73ed9f0dfe7c1f4ade4959ad82721ee11964-lfaGLD_fw658";
 
     public static List<String> getImageLists() {
-        List<String> photoLists = new ArrayList<>();
-
-        photoLists.add(IMGURL1);
-        photoLists.add(IMGURL2);
-        photoLists.add(IMGURL3);
-        photoLists.add(IMGURL4);
-        photoLists.add(IMGURL5);
-        photoLists.add(IMGURL6);
-        photoLists.add(IMGURL7);
-        photoLists.add(IMGURL8);
-        photoLists.add(IMGURL9);
-        photoLists.add(IMGURL10);
-        photoLists.add(IMGURL11);
-        photoLists.add(IMGURL12);
-        photoLists.add(IMGURL13);
-        photoLists.add(IMGURL14);
-        photoLists.add(IMGURL15);
-
+        String[] photos = {IMGURL1, IMGURL2, IMGURL3, IMGURL4, IMGURL5, IMGURL6, IMGURL7, IMGURL8, IMGURL9, IMGURL10, IMGURL11, IMGURL12, IMGURL13, IMGURL14, IMGURL15};
+        List<String> photoLists = Arrays.asList(photos);
+        Collections.shuffle(photoLists);
         return photoLists;
     }
 
