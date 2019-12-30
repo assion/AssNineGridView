@@ -174,8 +174,6 @@ public class AssNineGridView extends ViewGroup {
             }
         }
         //修改最后一个条目，决定是否显示更多
-        Log.d("assion assionhonty","adapter.getImageInfo().size() = "+adapter.getImageInfo().size());
-        Log.d("assion assionhonty",""+maxImgSize);
 
         if (adapter.getImageInfo().size() > maxImgSize) {
             View child = getChildAt(maxImgSize - 1);
